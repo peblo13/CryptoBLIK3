@@ -376,7 +376,9 @@ class CryptoBLIKFrontend {
             try {
                 const priceData = await this.makeAPICall(`/api/market-price/${symbol}`);
                 if (priceData && priceData.price) {
-                    this.updatePriceDisplay(symbol.toLowerCase(), priceData.price);
+                    // Extract base symbol (remove USDT suffix)
+                    const baseSymbol = symbol.replace('USDT', '').toLowerCase();
+                    this.updatePriceDisplay(baseSymbol, priceData.price);
                 }
             } catch (error) {
                 console.error(`Błąd ładowania ceny ${symbol}:`, error);
