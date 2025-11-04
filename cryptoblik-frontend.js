@@ -5,6 +5,9 @@
 
 class CryptoBLIKFrontend {
     constructor() {
+        // Initialize useProxy flag
+        this.useProxy = false; // Set to false to use direct backend API calls
+        
         // Dynamic API URL detection
         const currentHost = window.location.hostname;
         if (currentHost === 'localhost' || currentHost === '127.0.0.1') {
