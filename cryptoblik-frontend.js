@@ -5,6 +5,8 @@
 
 class CryptoBLIKFrontend {
     constructor() {
+        console.log('🚀 CryptoBLIKFrontend constructor called');
+        
         // Initialize useProxy flag
         this.useProxy = false; // Set to false to use direct backend API calls
         
@@ -16,6 +18,8 @@ class CryptoBLIKFrontend {
             // Production - use the same domain
             this.apiUrl = window.location.origin;
         }
+        
+        console.log('🌐 API URL set to:', this.apiUrl);
 
         this.currentTransaction = null;
         this.requestId = 0;
@@ -374,11 +378,16 @@ class CryptoBLIKFrontend {
 
         for (const symbol of cryptoSymbols) {
             try {
+                console.log(`🔄 Ładowanie ceny dla ${symbol}...`);
                 const priceData = await this.makeAPICall(`/api/market-price/${symbol}`);
+                console.log(`✅ Otrzymano dane dla ${symbol}:`, priceData);
                 if (priceData && priceData.price) {
                     // Extract base symbol (remove USDT suffix)
                     const baseSymbol = symbol.replace('USDT', '').toLowerCase();
+                    console.log(`🔄 Aktualizowanie ceny dla ${baseSymbol} na ${priceData.price}`);
                     this.updatePriceDisplay(baseSymbol, priceData.price);
+                } else {
+                    console.log(`❌ Brak danych ceny dla ${symbol}`);
                 }
             } catch (error) {
                 console.error(`Błąd ładowania ceny ${symbol}:`, error);
@@ -391,9 +400,14 @@ class CryptoBLIKFrontend {
     }
 
     updatePriceDisplay(symbol, price) {
+        console.log(`🔄 updatePriceDisplay called for ${symbol} with price ${price}`);
         const priceElement = document.getElementById(`${symbol}-price`);
+        console.log(`🔍 Looking for element: ${symbol}-price, found:`, priceElement);
         if (priceElement) {
-            priceElement.textContent = `$${parseFloat(price).toFixed(symbol === 'shibusdt' ? 8 : 2)}`;
+            priceElement.textContent = `$${parseFloat(price).toFixed(symbol === 'shib' ? 8 : 2)}`;
+            console.log(`✅ Updated ${symbol}-price to: ${priceElement.textContent}`);
+        } else {
+            console.log(`❌ Element ${symbol}-price not found`);
         }
     }
 
