@@ -5,9 +5,15 @@
 
 class CryptoBLIKFrontend {
     constructor() {
-        // API Proxy - używa bezpośrednich wywołań zamiast iframe
-        this.useProxy = false; // WŁĄCZ REAL API - użyj lokalnego Flask servera
-        this.apiUrl = this.useProxy ? 'http://localhost:3000' : 'http://localhost:5000';
+        // Dynamic API URL detection
+        const currentHost = window.location.hostname;
+        if (currentHost === 'localhost' || currentHost === '127.0.0.1') {
+            this.apiUrl = this.useProxy ? 'http://localhost:3000' : 'http://localhost:5000';
+        } else {
+            // Production - use the same domain
+            this.apiUrl = window.location.origin;
+        }
+
         this.currentTransaction = null;
         this.requestId = 0;
         this.pendingRequests = new Map();
