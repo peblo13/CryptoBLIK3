@@ -329,6 +329,9 @@ class CryptoBLIKFrontend {
             blikAmount.addEventListener('input', () => this.updateBLIKEstimate());
             blikCrypto.addEventListener('change', () => this.updateBLIKEstimate());
         }
+
+        // Załaduj ceny kryptowalut
+        this.loadCryptoPrices();
     }
 
     async loadSupportedCryptos() {
@@ -342,10 +345,48 @@ class CryptoBLIKFrontend {
             console.log('✅ BTC Price loaded:', btcPrice);
             
         } catch (error) {
-            console.error('❌ Błąd łączenia z API:', error);
+            console.error('❌ Błąd połączenia z API:', error);
             console.log('🔄 Switching to client-only mode...');
         }
-    }    updateCryptoSelects(tradingPairs) {
+    }
+
+    async loadCryptoPrices() {
+        console.log('📊 Ładowanie cen kryptowalut...');
+
+        // Lista wszystkich kryptowalut z HTML
+        const cryptoSymbols = [
+            'BTCUSDT', 'ETHUSDT', 'MATICUSDT', 'USDCUSDT', 'DAIUSDT', 'TUSDUSDT',
+            'TRXUSDT', 'DOGEUSDT', 'SHIBUSDT', 'ADAUSDT', 'SOLUSDT', 'DOTUSDT',
+            'LINKUSDT', 'LTCUSDT', 'BCHUSDT', 'XRPUSDT', 'AVAXUSDT', 'UNIUSDT',
+            'AAVEUSDT', 'SUSHIUSDT', 'CAKEUSDT', 'COMPUSDT', 'MKRUSDT', 'YFIUSDT',
+            'BALUSDT', 'CRVUSDT', 'RENUSDT', 'KNCUSDT', 'ZRXUSDT', 'BATUSDT',
+            'OMGUSDT', 'LRCUSDT', 'REPUSDT'
+        ];
+
+        for (const symbol of cryptoSymbols) {
+            try {
+                const priceData = await this.makeAPICall(`/api/market-price/${symbol}`);
+                if (priceData && priceData.price) {
+                    this.updatePriceDisplay(symbol.toLowerCase(), priceData.price);
+                }
+            } catch (error) {
+                console.error(`Błąd ładowania ceny ${symbol}:`, error);
+                // Fallback - pozostaw "--"
+            }
+        }
+
+        // Aktualizuj ceny co 30 sekund
+        setInterval(() => this.loadCryptoPrices(), 30000);
+    }
+
+    updatePriceDisplay(symbol, price) {
+        const priceElement = document.getElementById(`${symbol}-price`);
+        if (priceElement) {
+            priceElement.textContent = `$${parseFloat(price).toFixed(symbol === 'shibusdt' ? 8 : 2)}`;
+        }
+    }
+
+    updateCryptoSelects(tradingPairs) {
         // Zaktualizuj opcje w selectach na podstawie obsługiwanych par handlowych
         const selects = ['blikCrypto', 'sellCrypto'];
         
