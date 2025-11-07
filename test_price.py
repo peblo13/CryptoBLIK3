@@ -1,0 +1,9 @@
+#!/usr/bin/env python3
+from app import create_app
+
+app = create_app()
+
+with app.test_client() as client:
+    response = client.get('/api/market-price/BTCUSDT')
+    print('Status:', response.status_code)
+    print('Response:', response.get_json())

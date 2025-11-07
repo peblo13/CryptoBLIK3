@@ -1,0 +1,72 @@
+{
+  "navigation": {
+    "home": "Home",
+    "prices": "Prices",
+    "trading": "Trading",
+    "about": "About Us",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Trade Cryptocurrencies",
+    "subtitle": "Discover the world of digital currencies. Buy and sell Bitcoin, Ethereum and other cryptocurrencies with the best market rates.",
+    "btn_buy_sell": "Buy / Sell",
+    "btn_check_prices": "Check Prices"
+  },
+  "prices": {
+    "title": "Current Cryptocurrency Prices",
+    "show_more": "Show more cryptocurrencies",
+    "show_less": "Show fewer cryptocurrencies"
+  },
+  "trading": {
+    "buy_title": "🟢 Buy Cryptocurrency",
+    "sell_title": "🔴 Sell Cryptocurrency",
+    "amount_label": "Amount in PLN:",
+    "amount_placeholder": "e.g. 500",
+    "crypto_label": "Choose cryptocurrency:",
+    "sell_amount_label": "Amount:",
+    "sell_amount_placeholder": "e.g. 0.001",
+    "wallet_label": "Wallet address:",
+    "wallet_placeholder": "Your wallet address",
+    "blik_code_label": "BLIK code (6 digits):",
+    "blik_code_placeholder": "123456",
+    "email_label": "Email (for invoice):",
+    "email_placeholder": "your@email.com",
+    "phone_label": "Phone number:",
+    "phone_placeholder": "+48 123 456 789",
+    "btn_buy_now": "Buy now",
+    "btn_sell_now": "Sell now"
+  },
+  "forms": {
+    "required_field": "This field is required",
+    "invalid_email": "Invalid email address",
+    "invalid_blik": "BLIK code must contain 6 digits",
+    "invalid_amount": "Amount must be greater than 0",
+    "processing": "Processing...",
+    "success": "Success!",
+    "error": "Error"
+  },
+  "messages": {
+    "payment_processing": "Processing payment...",
+    "payment_success": "Payment has been successfully processed!",
+    "payment_error": "An error occurred while processing the payment.",
+    "loading_prices": "Loading prices...",
+    "price_error": "Error loading prices",
+    "connection_error": "Connection error. Check your internet connection."
+  },
+  "footer": {
+    "copyright": "© 2025 CryptoBLIK. All rights reserved. Cryptocurrency trading involves risk.",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy"
+  },
+  "language": {
+    "select": "Select language",
+    "polish": "Polski",
+    "english": "English"
+  },
+  "meta": {
+    "title": "CryptoBLIK - Buy and Sell Cryptocurrencies",
+    "description": "CryptoBLIK - Platform for buying and selling cryptocurrencies",
+    "keywords": "cryptocurrency, bitcoin, ethereum, trading, buy, sell"
+  }
+}

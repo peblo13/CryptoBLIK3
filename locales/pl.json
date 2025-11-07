@@ -1,0 +1,72 @@
+{
+  "navigation": {
+    "home": "Home",
+    "prices": "Ceny",
+    "trading": "Trading",
+    "about": "O Nas",
+    "faq": "FAQ",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Handluj Kryptowalutami",
+    "subtitle": "Odkryj świat cyfrowych walut. Kupuj i sprzedawaj Bitcoin, Ethereum i inne kryptowaluty z najlepszymi kursami na rynku.",
+    "btn_buy_sell": "Kup / Sprzedaj",
+    "btn_check_prices": "Sprawdź Ceny"
+  },
+  "prices": {
+    "title": "Aktualne Ceny Kryptowalut",
+    "show_more": "Pokaż więcej kryptowalut",
+    "show_less": "Pokaż mniej kryptowalut"
+  },
+  "trading": {
+    "buy_title": "🟢 Kup Kryptowalutę",
+    "sell_title": "🔴 Sprzedaj Kryptowalutę",
+    "amount_label": "Kwota w PLN:",
+    "amount_placeholder": "np. 500",
+    "crypto_label": "Wybierz kryptowalutę:",
+    "sell_amount_label": "Ilość:",
+    "sell_amount_placeholder": "np. 0.001",
+    "wallet_label": "Adres portfela:",
+    "wallet_placeholder": "Twój adres portfela",
+    "blik_code_label": "Kod BLIK (6 cyfr):",
+    "blik_code_placeholder": "123456",
+    "email_label": "Email (do faktury):",
+    "email_placeholder": "twoj@email.pl",
+    "phone_label": "Numer telefonu:",
+    "phone_placeholder": "+48 123 456 789",
+    "btn_buy_now": "Kup teraz",
+    "btn_sell_now": "Sprzedaj teraz"
+  },
+  "forms": {
+    "required_field": "To pole jest wymagane",
+    "invalid_email": "Nieprawidłowy adres email",
+    "invalid_blik": "Kod BLIK musi zawierać 6 cyfr",
+    "invalid_amount": "Kwota musi być większa niż 0",
+    "processing": "Przetwarzanie...",
+    "success": "Sukces!",
+    "error": "Błąd"
+  },
+  "messages": {
+    "payment_processing": "Przetwarzanie płatności...",
+    "payment_success": "Płatność została pomyślnie przetworzona!",
+    "payment_error": "Wystąpił błąd podczas przetwarzania płatności.",
+    "loading_prices": "Ładowanie cen...",
+    "price_error": "Błąd podczas ładowania cen",
+    "connection_error": "Błąd połączenia. Sprawdź połączenie internetowe."
+  },
+  "footer": {
+    "copyright": "© 2025 CryptoBLIK. Wszystkie prawa zastrzeżone. Trading kryptowalut wiąże się z ryzykiem.",
+    "terms": "Regulamin",
+    "privacy": "Polityka Prywatności"
+  },
+  "language": {
+    "select": "Wybierz język",
+    "polish": "Polski",
+    "english": "English"
+  },
+  "meta": {
+    "title": "CryptoBLIK - Kupuj i Sprzedawaj Kryptowaluty",
+    "description": "CryptoBLIK - Platforma do kupowania i sprzedawania kryptowalut",
+    "keywords": "kryptowaluty, bitcoin, ethereum, trading, kupno, sprzedaż"
+  }
+}

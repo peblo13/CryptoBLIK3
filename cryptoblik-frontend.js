@@ -34,6 +34,14 @@ class CryptoBLIKFrontend {
         // loadSupportedCryptos() - opcjonalne, wywołane później jeśli potrzebne
     }
 
+    // Utility method for localized messages
+    getLocalizedText(key, fallback = null) {
+        if (window.localizationManager) {
+            return window.localizationManager.translate(key, fallback);
+        }
+        return fallback || key;
+    }
+
     initializeDirectAPI() {
         console.log('🔧 Initializing direct API mode');
         
@@ -367,7 +375,7 @@ class CryptoBLIKFrontend {
     }
 
     async loadCryptoPrices() {
-        console.log('📊 Ładowanie cen kryptowalut...');
+        console.log('📊', this.getLocalizedText('messages.loading_prices', 'Ładowanie cen kryptowalut...'));
 
         // Lista wszystkich kryptowalut z HTML
         const cryptoSymbols = [
@@ -620,8 +628,8 @@ class CryptoBLIKFrontend {
     }
 
     validateBLIKData(data) {
-        if (!data.pln_amount || data.pln_amount < 1) {
-            this.showError('Minimalna kwota to 1 PLN');
+        if (!data.pln_amount || data.pln_amount < 60) {
+            this.showError('Minimalna kwota to 60 PLN');
             return false;
         }
 

@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FAQ CryptoBLIK - najczęściej zadawane pytania o platformę handlu kryptowalutami, sieci blockchain i płatności BLIK">
+    <title>FAQ - CryptoBLIK | Najczęściej zadawane pytania</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gold: #FFD700;
+            --primary-green: #00ff00;
+            --dark-bg: #0a0a0a;
+            --dark-secondary: #1a1a1a;
+            --dark-card: #111111;
+            --text-light: #ffffff;
+            --text-secondary: #cccccc;
+            --border-radius: 15px;
+            --shadow-glow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 50%, var(--dark-bg) 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 2px solid var(--primary-gold);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--primary-gold), var(--primary-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+        }
+
+        .main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, var(--primary-gold), var(--primary-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .search-section {
+            background: linear-gradient(145deg, var(--dark-card), var(--dark-secondary));
+            border: 2px solid var(--primary-gold);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: var(--border-radius);
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--text-light);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+        }
+
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .category-card {
+            background: linear-gradient(145deg, var(--dark-card), var(--dark-secondary));
+            border: 2px solid var(--primary-green);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--primary-gold);
+        }
+
+        .category-card.active {
+            border-color: var(--primary-gold);
+            background: linear-gradient(145deg, rgba(255, 215, 0, 0.1), var(--dark-secondary));
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-title {
+            color: var(--primary-green);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-count {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .faq-container {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: linear-gradient(145deg, var(--dark-card), var(--dark-secondary));
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.hidden {
+            display: none;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-gold);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .faq-question h3 {
+            color: var(--primary-gold);
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .faq-icon {
+            font-size: 1.2rem;
+            color: var(--primary-green);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-secondary);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            margin-bottom: 1rem;
+        }
+
+        .faq-answer ul {
+            margin-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-answer li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            background: rgba(255, 215, 0, 0.2);
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            color: var(--primary-gold);
+            font-weight: 600;
+        }
+
+        .contact-cta {
+            background: linear-gradient(145deg, var(--dark-card), var(--dark-secondary));
+            border: 2px solid var(--primary-green);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .contact-cta h3 {
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+
+        .contact-cta p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            background: linear-gradient(45deg, var(--primary-gold), #FFA500);
+            color: var(--dark-bg);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+        }
+
+        .footer {
+            background: var(--dark-card);
+            border-top: 2px solid var(--primary-gold);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--primary-gold);
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .main {
+                padding: 1rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .search-section, .contact-cta {
+                padding: 1.5rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="index_complete.html" class="logo">CryptoBLIK</a>
+            <nav class="nav">
+                <a href="index_complete.html" class="nav-link">Home</a>
+                <a href="O_nas-new.html" class="nav-link">O nas</a>
+                <a href="FAQ-new.html" class="nav-link">FAQ</a>
+                <a href="kontakt-new.html" class="nav-link">Kontakt</a>
+                <a href="regulamin.html" class="nav-link">Regulamin</a>
+                <a href="polityka-prywatnosci-new.html" class="nav-link">Prywatność</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <h1 class="page-title">❓ FAQ CryptoBLIK - Wszystko o kryptowalutach</h1>
+        <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+            Odpowiedzi na najczęściej zadawane pytania o kryptowaluty, sieci blockchain, płatności BLIK i bezpieczeństwo transakcji.
+        </p>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Szukaj pytań o crypto, BLIK, sieciach...">
+        </div>
+
+        <!-- Categories -->
+        <div class="categories">
+            <div class="category-card active" onclick="filterCategory('all')">
+                <div class="category-icon">📋</div>
+                <div class="category-title">Wszystkie</div>
+                <div class="category-count">35 pytań</div>
+            </div>
+            <div class="category-card" onclick="filterCategory('basics')">
+                <div class="category-icon">🎓</div>
+                <div class="category-title">Podstawy Crypto</div>
+                <div class="category-count">5 pytań</div>
+            </div>
+            <div class="category-card" onclick="filterCategory('transactions')">
+                <div class="category-icon">💳</div>
+                <div class="category-title">Transakcje</div>
+                <div class="category-count">4 pytania</div>
+            </div>
+            <div class="category-card" onclick="filterCategory('security')">
+                <div class="category-icon">🔒</div>
+                <div class="category-title">Bezpieczeństwo</div>
+                <div class="category-count">3 pytania</div>
+            </div>
+            <div class="category-card" onclick="filterCategory('support')">
+                <div class="category-icon">�</div>
+                <div class="category-title">Wsparcie</div>
+                <div class="category-count">3 pytania</div>
+            </div>
+            <div class="category-card" onclick="filterCategory('technical')">
+                <div class="category-icon">⚙️</div>
+                <div class="category-title">Techniczne</div>
+                <div class="category-count">8 pytań</div>
+            </div>
+            <div class="category-card" onclick="filterCategory('legal')">
+                <div class="category-icon">⚖️</div>
+                <div class="category-title">Prawne</div>
+                <div class="category-count">4 pytania</div>
+            </div>
+            <div class="category-card" onclick="filterCategory('trading')">
+                <div class="category-icon">📈</div>
+                <div class="category-title">Trading</div>
+                <div class="category-count">3 pytania</div>
+            </div>
+        </div>
+
+        <!-- FAQ Items -->
+        <div class="faq-container">
+            <!-- Podstawy kryptowalut -->
+            <div class="faq-item" data-category="basics">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Co to są kryptowaluty i jak działają?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Kryptowaluty to <span class="highlight">cyfrowe waluty</span> oparte na technologii blockchain:</p>
+                    <ul>
+                        <li><span class="highlight">Zdecentralizowane</span> - nie kontrolowane przez banki centralne</li>
+                        <li><span class="highlight">Bezpieczne</span> - chronione kryptografią</li>
+                        <li><span class="highlight">Przezroczyste</span> - wszystkie transakcje są publiczne</li>
+                        <li><span class="highlight">Globalne</span> - działają 24/7 na całym świecie</li>
+                    </ul>
+                    <p>Najpopularniejsze to Bitcoin (BTC), Ethereum (ETH), czy Binance Coin (BNB).</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="basics">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Czym są sieci blockchain i dlaczego są ważne?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><span class="highlight">Sieci blockchain</span> to infrastruktura, po której działają kryptowaluty:</p>
+                    <ul>
+                        <li><span class="highlight">Bitcoin Network</span> - dla BTC (najstarszy, najwolniejszy, najdroższy)</li>
+                        <li><span class="highlight">Ethereum (ERC-20)</span> - dla ETH i tokenów ERC-20</li>
+                        <li><span class="highlight">BEP-20 (BSC)</span> - Binance Smart Chain (szybki, tani)</li>
+                        <li><span class="highlight">Polygon (MATIC)</span> - szybka sieć dla Ethereum</li>
+                        <li><span class="highlight">TRON (TRC-20)</span> - bardzo niskie opłaty</li>
+                    </ul>
+                    <p><strong>UWAGA:</strong> Wybór niewłaściwej sieci może prowadzić do <span class="highlight">utraty środków!</span></p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="basics">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Jak wybrać odpowiednią sieć blockchain?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Wybór sieci zależy od Twojego portfela docelowego:</p>
+                    <ul>
+                        <li><span class="highlight">Sprawdź portfel</span> - jakie sieci obsługuje</li>
+                        <li><span class="highlight">Ethereum (ERC-20)</span> - uniwersalny, ale drogi</li>
+                        <li><span class="highlight">BSC (BEP-20)</span> - tani, szybki, popularne giełdy</li>
+                        <li><span class="highlight">TRON (TRC-20)</span> - najniższe opłaty dla USDT</li>
+                        <li><span class="highlight">Polygon</span> - kompromis między ceną a funkcjonalnością</li>
+                    </ul>
+                    <p><strong>Tip:</strong> Dla pierwszych transakcji polecamy <span class="highlight">BEP-20 (BSC)</span> - łatwe i tanie!</p>
+                </div>
+            </div>
+
+            <!-- Transakcje -->
+            <div class="faq-item" data-category="transactions">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Jak kupić kryptowaluty przez BLIK?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Proces zakupu jest bardzo prosty:</p>
+                    <ol>
+                        <li><span class="highlight">Wybierz kryptowalutę</span> z naszej listy 47+ krypto</li>
+                        <li><span class="highlight">Podaj adres portfela</span> i wybierz sieć blockchain</li>
+                        <li><span class="highlight">Wpisz kwotę</span> w PLN (min. 60 PLN)</li>
+                        <li><span class="highlight">Potwierdź dane</span> i przejdź do płatności</li>
+                        <li><span class="highlight">Zapłać przez BLIK</span> w aplikacji bankowej</li>
+                        <li><span class="highlight">Otrzymaj krypto</span> w ciągu 15-30 minut</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="transactions">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Jak długo trwa realizacja zamówienia?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Czas realizacji zależy od sieci blockchain:</p>
+                    <ul>
+                        <li><span class="highlight">TRON (TRC-20):</span> 1-5 minut</li>
+                        <li><span class="highlight">BSC (BEP-20):</span> 3-10 minut</li>
+                        <li><span class="highlight">Polygon:</span> 5-15 minut</li>
+                        <li><span class="highlight">Ethereum (ERC-20):</span> 10-30 minut</li>
+                        <li><span class="highlight">Bitcoin:</span> 30-60 minut</li>
+                    </ul>
+                    <p>W przypadku wysokiego ruchu sieciowego może to potrwać do <span class="highlight">24 godzin</span>.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="transactions">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Jakie są opłaty za transakcje?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Struktura opłat CryptoBLIK:</p>
+                    <ul>
+                        <li><span class="highlight">Opłata serwisowa:</span> 2,5% od wartości transakcji</li>
+                        <li><span class="highlight">Płatność BLIK:</span> 0% (bezpłatna)</li>
+                        <li><span class="highlight">Opłaty sieciowe:</span> wliczone w cenę</li>
+                        <li><span class="highlight">Ukryte opłaty:</span> BRAK</li>
+                    </ul>
+                    <p>Przykład: kupujesz za 1000 PLN → płacisz 1025 PLN (wszystko wliczone). Minimum to 60 PLN.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="transactions">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Jakie są limity transakcji?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Limity dla użytkowników podstawowych:</p>
+                    <ul>
+                        <li><span class="highlight">Minimum:</span> 60 PLN na transakcję</li>
+                        <li><span class="highlight">Maksimum na transakcję:</span> 50,000 PLN</li>
+                        <li><span class="highlight">Maksimum dzienne:</span> 100,000 PLN</li>
+                        <li><span class="highlight">Maksimum miesięczne:</span> 500,000 PLN</li>
+                    </ul>
+                    <p>Wyższe limity dostępne po <span class="highlight">weryfikacji tożsamości</span>.</p>
+                </div>
+            </div>
+
+            <!-- Bezpieczeństwo -->
+            <div class="faq-item" data-category="security">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Czy CryptoBLIK jest bezpieczny?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Bezpieczeństwo to nasz absolutny priorytet:</p>
+                    <ul>
+                        <li><span class="highlight">Licencja PayU</span> - regulowany operator płatności</li>
+                        <li><span class="highlight">Szyfrowanie SSL/TLS</span> wszystkich połączeń</li>
+                        <li><span class="highlight">API Bybit</span> - współpraca z top giełdą crypto</li>
+                        <li><span class="highlight">Zgodność z RODO</span> i polskim prawem</li>
+                        <li><span class="highlight">Monitoring 24/7</span> wszystkich transakcji</li>
+                        <li><span class="highlight">Audyty bezpieczeństwa</span> co 6 miesięcy</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="security">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Co zrobić jeśli podałem/am zły adres portfela?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>UWAGA:</strong> Transakcje blockchain są <span class="highlight">nieodwracalne!</span></p>
+                    <ul>
+                        <li><span class="highlight">Sprawdź zawsze</span> adres przed płatnością</li>
+                        <li><span class="highlight">Skopiuj/wklej</span> - nie przepisuj ręcznie</li>
+                        <li><span class="highlight">Testuj małą kwotą</span> przed dużą transakcją</li>
+                        <li><span class="highlight">Sprawdź sieć</span> - czy portfel ją obsługuje</li>
+                    </ul>
+                    <p>Jeśli popełnisz błąd, <span class="highlight">środki mogą być utracone na zawsze</span>!</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="security">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Jak chronione są moje dane osobowe?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Ochrona danych zgodna z <span class="highlight">RODO</span>:</p>
+                    <ul>
+                        <li><span class="highlight">Szyfrowanie AES-256</span> danych w bazie</li>
+                        <li><span class="highlight">Ograniczony dostęp</span> tylko dla autoryzowanych pracowników</li>
+                        <li><span class="highlight">Automatyczne usuwanie</span> starych danych</li>
+                        <li><span class="highlight">Prawo do zapomnienia</span> - możesz żądać usunięcia</li>
+                        <li><span class="highlight">Kopie zapasowe</span> w bezpiecznych lokalizacjach</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Wsparcie -->
+            <div class="faq-item" data-category="support">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Jak skontaktować się ze wsparciem?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Dostępne kanały wsparcia:</p>
+                    <ul>
+                        <li><span class="highlight">Email:</span> support@cryptoblik.pl</li>
+                        <li><span class="highlight">Live Chat:</span> dostępny na stronie 9:00-21:00</li>
+                        <li><span class="highlight">Telegram:</span> @CryptoBLIKSupport</li>
+                        <li><span class="highlight">Telefon:</span> +48 123 456 789 (9:00-17:00)</li>
+                    </ul>
+                    <p>Średni czas odpowiedzi: <span class="highlight">2-6 godzin</span> w dni robocze.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="support">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Co zrobić jeśli transakcja się opóźnia?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Jeśli transakcja trwa dłużej niż oczekiwano:</p>
+                    <ol>
+                        <li><span class="highlight">Sprawdź email</span> - czy otrzymałeś potwierdzenie</li>
+                        <li><span class="highlight">Sprawdź blockchain explorer</span> - czy transakcja została wysłana</li>
+                        <li><span class="highlight">Poczekaj 24h</span> - czasem sieci są przeciążone</li>
+                        <li><span class="highlight">Skontaktuj się z nami</span> z numerem zamówienia</li>
+                    </ol>
+                    <p>W 99% przypadków transakcje są realizowane w deklarowanym czasie.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="support">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Czy mogę anulować zamówienie?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Anulowanie zależy od statusu zamówienia:</p>
+                    <ul>
+                        <li><span class="highlight">Przed płatnością:</span> TAK - po prostu nie płać</li>
+                        <li><span class="highlight">Po płatności BLIK:</span> NIE - transakcja jest procesowana automatycznie</li>
+                        <li><span class="highlight">Po wysłaniu crypto:</span> NIE - transakcje blockchain są nieodwracalne</li>
+                    </ul>
+                    <p>Dlatego zawsze <span class="highlight">sprawdź dane przed płatnością!</span></p>
+                </div>
+            </div>
+
+            <!-- Techniczne -->
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Które kryptowaluty obsługuje CryptoBLIK?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Obsługujemy <span class="highlight">47+ najpopularniejszych kryptowalut</span>:</p>
+                    <ul>
+                        <li><span class="highlight">Top waluty:</span> Bitcoin, Ethereum, BNB, XRP, Cardano</li>
+                        <li><span class="highlight">DeFi tokeny:</span> Chainlink, Uniswap, Aave, Maker</li>
+                        <li><span class="highlight">Stablecoiny:</span> USDT, USDC, BUSD, DAI</li>
+                        <li><span class="highlight">Meme coiny:</span> Dogecoin, Shiba Inu, Pepe</li>
+                        <li><span class="highlight">AI tokeny:</span> Fetch.ai, SingularityNET</li>
+                        <li><span class="highlight">Gaming:</span> Axie Infinity, Decentraland</li>
+                    </ul>
+                    <p>Lista jest regularnie aktualizowana o nowe projekty.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Skąd pochodzą ceny kryptowalut?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Ceny pochodzą z <span class="highlight">Bybit API</span> - jednej z największych giełd crypto:</p>
+                    <ul>
+                        <li><span class="highlight">Aktualizacja co 30 sekund</span> - zawsze aktualne ceny</li>
+                        <li><span class="highlight">Spread 0,5-1%</span> - konkurencyjne marże</li>
+                        <li><span class="highlight">Bez manipulacji</span> - ceny rynkowe</li>
+                        <li><span class="highlight">Przejrzystość</span> - widzisz cenę przed płatnością</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Dlaczego muszę wybrać sieć blockchain?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Wiele kryptowalut istnieje na różnych sieciach:</p>
+                    <ul>
+                        <li><span class="highlight">USDT</span> - dostępny na Ethereum, TRON, BSC, Polygon</li>
+                        <li><span class="highlight">Różne opłaty</span> - TRON najtańszy, Ethereum najdroższy</li>
+                        <li><span class="highlight">Kompatybilność</span> - portfel musi obsługiwać daną sieć</li>
+                        <li><span class="highlight">Błędny wybór = utrata środków!</span></li>
+                    </ul>
+                    <p>Zawsze sprawdź, którą sieć obsługuje Twój portfel!</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Co to jest adres portfela crypto?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Adres portfela to Twój <span class="highlight">"numer konta" dla kryptowalut</span>:</p>
+                    <ul>
+                        <li><span class="highlight">Format:</span> długi ciąg liter i cyfr (np. 0x742d35Cc6e54C5aE8420A...)</li>
+                        <li><span class="highlight">Unikalny</span> - każdy portfel ma swój adres</li>
+                        <li><span class="highlight">Publiczny</span> - możesz go bezpiecznie udostępnić</li>
+                        <li><span class="highlight">Różne dla różnych sieci</span> - Ethereum ma inny niż Bitcoin</li>
+                    </ul>
+                    <p><strong>Tip:</strong> Zawsze kopiuj adres z portfela - nie przepisuj ręcznie!</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Czy potrzebuję specjalnego portfela?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Polecane portfele dla różnych potrzeb:</p>
+                    <ul>
+                        <li><span class="highlight">Początkujący:</span> Trust Wallet, MetaMask (aplikacje mobilne)</li>
+                        <li><span class="highlight">Giełdy:</span> Binance, Bybit, KuCoin (proste w użyciu)</li>
+                        <li><span class="highlight">Zaawansowani:</span> Ledger, Trezor (hardware wallets)</li>
+                        <li><span class="highlight">DeFi:</span> MetaMask, WalletConnect (do aplikacji)</li>
+                    </ul>
+                    <p>Dla pierwszych kroków polecamy <span class="highlight">Trust Wallet</span> lub <span class="highlight">giełdę Binance</span>.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Co to są stablecoiny i po co ich używać?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Stablecoiny to kryptowaluty <span class="highlight">powiązane z USD</span>:</p>
+                    <ul>
+                        <li><span class="highlight">USDT, USDC</span> - zawsze ≈ 1 USD</li>
+                        <li><span class="highlight">Stabilna wartość</span> - brak wahań cen</li>
+                        <li><span class="highlight">Łatwość wymiany</span> - akceptowane wszędzie</li>
+                        <li><span class="highlight">Bezpieczna przystań</span> - podczas spadków rynku</li>
+                    </ul>
+                    <p>Idealne dla <span class="highlight">pierwszego zakupu crypto</span> lub <span class="highlight">przechowywania wartości</span>.</p>
+                </div>
+            </div>
+        </div>
+                </div>
+            </div>
+
+            <!-- Account Category -->
+            <div class="faq-item" data-category="account">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Czy muszę tworzyć konto?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><span class="highlight">Nie</span>, nie musisz tworzyć konta!</p>
+                    <p>CryptoBLIK działa bez rejestracji - wystarczy:</p>
+                    <ul>
+                        <li>Podać adres email</li>
+                        <li>Numer telefonu</li>
+                        <li>Adres portfela kryptowalut</li>
+                    </ul>
+                    <p>W przyszłości planujemy opcjonalne konta dla stałych klientów.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="account">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Czy mogę sprawdzić historię moich transakcji?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Tak, otrzymujesz <span class="highlight">email z potwierdzeniem</span> każdej transakcji zawierający:</p>
+                    <ul>
+                        <li>Numer zamówienia</li>
+                        <li>Kwotę i kryptowalutę</li>
+                        <li>Hash transakcji blockchain</li>
+                        <li>Status realizacji</li>
+                    </ul>
+                    <p>Dodatkowo możesz sprawdzić status w blockchain explorze.</p>
+                </div>
+            </div>
+
+            <!-- Technical Category -->
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Skąd pochodzą kursy kryptowalut?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Kursy pobieramy w czasie rzeczywistym z <span class="highlight">giełdy Bybit</span>:</p>
+                    <ul>
+                        <li>Aktualizacja co 30 sekund</li>
+                        <li>Kursy spot (bieżące)</li>
+                        <li>Transparentne źródło danych</li>
+                        <li>Gwarantowany kurs przez 15 minut</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Co zrobić jeśli nie otrzymałem kryptowaluty?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Jeśli transakcja nie dotarła:</p>
+                    <ol>
+                        <li>Sprawdź adres portfela w emailu potwierdzającym</li>
+                        <li>Poczekaj do 24h (może być opóźnienie sieciowe)</li>
+                        <li>Sprawdź hash transakcji w blockchain explorer</li>
+                        <li>Skontaktuj się z wsparciem podając numer zamówienia</li>
+                    </ol>
+                    <p><span class="highlight">Ważne:</span> Zawsze sprawdzaj poprawność adresu portfela przed płatnością!</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Jakie kryptowaluty mogę kupić?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Aktualnie obsługujemy <span class="highlight">47+ najpopularniejszych kryptowalut</span>:</p>
+                    <ul>
+                        <li>Bitcoin (BTC)</li>
+                        <li>Ethereum (ETH)</li>
+                        <li>Cardano (ADA)</li>
+                        <li>Solana (SOL)</li>
+                        <li>Polkadot (DOT)</li>
+                        <li>Chainlink (LINK)</li>
+                        <li>Polygon (MATIC)</li>
+                        <li>Avalanche (AVAX)</li>
+                        <li>Litecoin (LTC)</li>
+                        <li>Bitcoin Cash (BCH)</li>
+                    </ul>
+                    <p>Planujemy dodanie kolejnych kryptowalut w najbliższej przyszłości.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="transactions">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Dlaczego płatność BLIK została odrzucona?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Najczęstsze przyczyny odrzucenia płatności BLIK:</p>
+                    <ul>
+                        <li><span class="highlight">Niewystarczające środki</span> na koncie</li>
+                        <li><span class="highlight">Przekroczenie limitów</span> dziennych BLIK</li>
+                        <li><span class="highlight">Błędny kod BLIK</span> (wygasł po 2 minutach)</li>
+                        <li><span class="highlight">Problemy techniczne</span> banku</li>
+                        <li><span class="highlight">Zablokowana karta</span> lub aplikacja</li>
+                    </ul>
+                    <p>W przypadku problemów spróbuj ponownie lub skontaktuj się z bankiem.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="security">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Czy CryptoBLIK przechowuje moje kryptowaluty?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><span class="highlight">Nie!</span> CryptoBLIK nie przechowuje kryptowalut klientów.</p>
+                    <p>Jesteśmy platformą wymiany - kryptowaluty są wysyłane bezpośrednio na Twój portfel:</p>
+                    <ul>
+                        <li>Pełna kontrola nad swoimi środkami</li>
+                        <li>Brak ryzyka hakerskich ataków na giełdę</li>
+                        <li>Twoje klucze prywatne tylko u Ciebie</li>
+                        <li>Natychmiastowy transfer na Twój portfel</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Additional FAQ items... -->
+            <div class="faq-item" data-category="account">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Czy mogę sprzedać kryptowaluty?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Funkcja sprzedaży kryptowalut będzie dostępna <span class="highlight">w najbliższej przyszłości</span>.</p>
+                    <p>Aktualnie skupiamy się na doskonaleniu procesu zakupu. Sprzedaż planujemy uruchomić w Q1 2026.</p>
+                    <p>Zapisz się do newslettera, aby otrzymać informację o nowych funkcjach!</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Czy mogę używać CryptoBLIK na telefonie?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><span class="highlight">Tak!</span> CryptoBLIK jest w pełni responsywny:</p>
+                    <ul>
+                        <li>Działa na wszystkich przeglądarkach mobilnych</li>
+                        <li>Optymalizowany interfejs na telefony</li>
+                        <li>Płatności BLIK bezpośrednio z aplikacji bankowej</li>
+                        <li>Wszystkie funkcje dostępne na mobile</li>
+                    </ul>
+                    <p>Planujemy również dedykowaną aplikację mobilną w 2026 roku.</p>
+                </div>
+            </div>
+
+            <!-- Dodatkowe pytania Podstawy -->
+            <div class="faq-item" data-category="basics">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Czy kryptowaluty to dobra inwestycja?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>UWAGA:</strong> To nie jest porada inwestycyjna!</p>
+                    <ul>
+                        <li><span class="highlight">Wysokie ryzyko</span> - ceny mogą mocno wahać się</li>
+                        <li><span class="highlight">Potencjał wzrostu</span> - historia pokazuje długoterminowe zyski</li>
+                        <li><span class="highlight">Dywersyfikacja</span> - nie wkładaj wszystkich pieniędzy w crypto</li>
+                        <li><span class="highlight">Edukacja</span> - ucz się przed inwestowaniem</li>
+                    </ul>
+                    <p>Pamiętaj: <span class="highlight">inwestuj tylko to, na co możesz sobie pozwolić stracić!</span></p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="basics">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Co to jest mining i czy mogę go uprawiać?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><span class="highlight">Mining</span> to proces weryfikacji transakcji blockchain:</p>
+                    <ul>
+                        <li><span class="highlight">Bitcoin mining</span> - wymaga specjalistycznego sprzętu (ASIC)</li>
+                        <li><span class="highlight">Ethereum mining</span> - zakończony (przeszedł na Proof of Stake)</li>
+                        <li><span class="highlight">Alternatywy:</span> mining innych coinów na kartach graficznych</li>
+                        <li><span class="highlight">Opłacalność</span> - zależy od cen prądu i sprzętu</li>
+                    </ul>
+                    <p>W Polsce mining może być nieopłacalny przez wysokie ceny prądu.</p>
+                </div>
+            </div>
+
+            <!-- Dodatkowe pytania Transakcje -->
+            <div class="faq-item" data-category="transactions">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Czy mogę kupić krypto za gotówkę?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>CryptoBLIK obecnie obsługuje tylko <span class="highlight">płatności BLIK</span>:</p>
+                    <ul>
+                        <li><span class="highlight">Dlaczego BLIK?</span> - szybko, bezpiecznie, bez opłat</li>
+                        <li><span class="highlight">Brak gotówki</span> - ze względów bezpieczeństwa i prawnych</li>
+                        <li><span class="highlight">Brak przelewów tradycyjnych</span> - BLIK jest szybszy</li>
+                        <li><span class="highlight">Planowane:</span> karty płatnicze w przyszłości</li>
+                    </ul>
+                    <p>Jeśli nie masz BLIK, załóż konto w banku obsługującym tę usługę.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="transactions">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Co się stanie jeśli podałem zły adres email?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Email jest używany tylko do powiadomień:</p>
+                    <ul>
+                        <li><span class="highlight">Krypto zostanie wysłane</span> - na podany adres portfela</li>
+                        <li><span class="highlight">Brak potwierdzenia email</span> - nie otrzymasz powiadomienia</li>
+                        <li><span class="highlight">Skontaktuj się z nami</span> - podaj numer zamówienia</li>
+                        <li><span class="highlight">Sprawdź portfel</span> - krypto prawdopodobnie już tam jest</li>
+                    </ul>
+                    <p>Najważniejszy jest <span class="highlight">adres portfela</span>, nie email!</p>
+                </div>
+            </div>
+
+            <!-- Dodatkowe pytania Bezpieczeństwo -->
+            <div class="faq-item" data-category="security">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Jak rozpoznać oszustwa crypto?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Najczęstsze oszustwa i jak ich unikać:</p>
+                    <ul>
+                        <li><span class="highlight">Fałszywe giełdy</span> - używaj tylko znanych platform</li>
+                        <li><span class="highlight">"Gwarantowane zyski"</span> - nie ma gwarancji w crypto!</li>
+                        <li><span class="highlight">Phishing</span> - sprawdzaj zawsze URL strony</li>
+                        <li><span class="highlight">Piramidy finansowe</span> - unikaj schematów MLM</li>
+                        <li><span class="highlight">Fake support</span> - nigdy nie podawaj kluczy prywatnych</li>
+                    </ul>
+                    <p>Zasada: <span class="highlight">jeśli brzmi zbyt dobrze, to prawdopodobnie oszustwo!</span></p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="security">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Co to jest seed phrase i jak go chronić?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><span class="highlight">Seed phrase</span> to 12-24 słów odzyskujących portfel:</p>
+                    <ul>
+                        <li><span class="highlight">Zapisz offline</span> - na papierze, nigdy cyfrowo</li>
+                        <li><span class="highlight">Trzymaj w sejfie</span> - lub innym bezpiecznym miejscu</li>
+                        <li><span class="highlight">Nie dziel się</span> - z nikim, nawet rodziną</li>
+                        <li><span class="highlight">Nie rób zdjęć</span> - nie zapisuj w telefonie/komputerze</li>
+                        <li><span class="highlight">Zrób kopie</span> - w różnych bezpiecznych miejscach</li>
+                    </ul>
+                    <p><strong>UWAGA:</strong> Kto ma seed phrase, ma dostęp do wszystkich środków!</p>
+                </div>
+            </div>
+
+            <!-- Dodatkowe pytanie Wsparcie -->
+            <div class="faq-item" data-category="support">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Czy CryptoBLIK ma program partnerski?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Obecnie przygotowujemy <span class="highlight">program polecający</span>:</p>
+                    <ul>
+                        <li><span class="highlight">Prowizje</span> - za poleconych użytkowników</li>
+                        <li><span class="highlight">Bonusy</span> - dla aktywnych partnerów</li>
+                        <li><span class="highlight">Materiały</span> - banery, linki, wsparcie</li>
+                        <li><span class="highlight">Start:</span> planowany na Q1 2026</li>
+                    </ul>
+                    <p>Zapisz się do newslettera, aby otrzymać informację o uruchomieniu!</p>
+                </div>
+            </div>
+
+            <!-- Dodatkowe pytania Techniczne -->
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Co to jest smart contract?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><span class="highlight">Smart contract</span> to program na blockchain:</p>
+                    <ul>
+                        <li><span class="highlight">Automatyczne wykonanie</span> - bez pośredników</li>
+                        <li><span class="highlight">Niezmienność</span> - nie można ich zmienić po wdrożeniu</li>
+                        <li><span class="highlight">DeFi aplikacje</span> - pożyczki, wymiana, farming</li>
+                        <li><span class="highlight">NFT</span> - tokeny non-fungible</li>
+                        <li><span class="highlight">Ethereum</span> - najpopularniejsza platforma</li>
+                    </ul>
+                    <p>Smart contracts umożliwiają <span class="highlight">zdecentralizowane finanse (DeFi)</span>.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Co to jest DeFi i czy jest bezpieczne?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><span class="highlight">DeFi</span> (Decentralized Finance) to alternatywa dla banków:</p>
+                    <ul>
+                        <li><span class="highlight">Pożyczki</span> - bez banku, pod zastaw crypto</li>
+                        <li><span class="highlight">Wymiana</span> - DEX-y jak Uniswap</li>
+                        <li><span class="highlight">Staking</span> - oprocentowanie za blokadę środków</li>
+                        <li><span class="highlight">Yield farming</span> - wyższe zyski, wyższe ryzyko</li>
+                    </ul>
+                    <p><strong>Ryzyko:</strong> <span class="highlight">smart contract bugs, impermanent loss, wysokie opłaty gas</span></p>
+                </div>
+            </div>
+
+            <!-- Nowe kategorie -->
+            <!-- Prawne -->
+            <div class="faq-item" data-category="legal">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Czy kryptowaluty są legalne w Polsce?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><span class="highlight">Tak!</span> Kryptowaluty są legalne w Polsce:</p>
+                    <ul>
+                        <li><span class="highlight">Brak zakazu</span> - można legalnie kupować i sprzedawać</li>
+                        <li><span class="highlight">Środek płatniczy</span> - uznawane jako mienie</li>
+                        <li><span class="highlight">Firmy crypto</span> - działają legalnie w Polsce</li>
+                        <li><span class="highlight">Regulacje EU</span> - MiCA w pełni obowiązuje od 2024</li>
+                    </ul>
+                    <p>CryptoBLIK działa zgodnie z polskim prawem i regulacjami UE.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="legal">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Czy muszę płacić podatki od kryptowalut?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><span class="highlight">TAK!</span> Zyski z crypto podlegają opodatkowaniu:</p>
+                    <ul>
+                        <li><span class="highlight">PIT-38:</span> przy sprzedaży z zyskiem</li>
+                        <li><span class="highlight">19% stawka</span> - od zysku kapitałowego</li>
+                        <li><span class="highlight">Koszt nabycia</span> - odejmij od ceny sprzedaży</li>
+                        <li><span class="highlight">Prowadź dokumentację</span> - daty, ceny, kwoty</li>
+                        <li><span class="highlight">Konsultuj z księgowym</span> - w skomplikowanych przypadkach</li>
+                    </ul>
+                    <p>To nie jest porada podatkowa - skonsultuj się z profesjonalistą!</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="legal">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Czy CryptoBLIK podlega regulacjom finansowym?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Tak, działamy w zgodzie z regulacjami:</p>
+                    <ul>
+                        <li><span class="highlight">PayU licencja</span> - regulowany operator płatności</li>
+                        <li><span class="highlight">RODO compliance</span> - ochrona danych osobowych</li>
+                        <li><span class="highlight">AML/KYC</span> - przeciwdziałanie praniu pieniędzy</li>
+                        <li><span class="highlight">MiCA ready</span> - przygotowani na nowe regulacje EU</li>
+                    </ul>
+                    <p>Monitorujemy zmiany prawne i dostosowujemy się do wymogów.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="legal">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Co to jest KYC i czy go wymagacie?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><span class="highlight">KYC</span> (Know Your Customer) to weryfikacja tożsamości:</p>
+                    <ul>
+                        <li><span class="highlight">Obecnie nie wymagamy</span> - dla małych kwot</li>
+                        <li><span class="highlight">Przy dużych transakcjach</span> - możemy poprosić o weryfikację</li>
+                        <li><span class="highlight">Dokumenty:</span> dowód osobisty, selfie</li>
+                        <li><span class="highlight">Wyższe limity</span> - po weryfikacji</li>
+                        <li><span class="highlight">Bezpieczeństwo</span> - ochrona przed oszustwami</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Trading -->
+            <div class="faq-item" data-category="trading">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Czy mogę sprzedać krypto przez CryptoBLIK?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Obecnie <span class="highlight">planujemy funkcję sprzedaży</span>:</p>
+                    <ul>
+                        <li><span class="highlight">Q2 2025</span> - planowane uruchomienie</li>
+                        <li><span class="highlight">Wypłata na konto</span> - przelewy bankowe</li>
+                        <li><span class="highlight">Konkurencyjne kursy</span> - oparte na Bybit</li>
+                        <li><span class="highlight">Szybka realizacja</span> - do 24h</li>
+                    </ul>
+                    <p>Tymczasowo możesz sprzedać na giełdach jak Binance czy Bybit.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="trading">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Kiedy najlepiej kupować kryptowaluty?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>To nie jest porada inwestycyjna, ale oto popularne strategie:</p>
+                    <ul>
+                        <li><span class="highlight">Dollar Cost Averaging</span> - regularne zakupy niezależnie od ceny</li>
+                        <li><span class="highlight">Buy the Dip</span> - kupowanie podczas spadków</li>
+                        <li><span class="highlight">HODL</span> - długoterminowe trzymanie</li>
+                        <li><span class="highlight">Nie time market</span> - trudno przewidzieć idealne momenty</li>
+                    </ul>
+                    <p>Pamiętaj: <span class="highlight">przeszłe wyniki nie gwarantują przyszłych zysków!</span></p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="trading">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Co to jest HODL i czy to dobra strategia?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><span class="highlight">HODL</span> (Hold On for Dear Life) to długoterminowa strategia:</p>
+                    <ul>
+                        <li><span class="highlight">Kup i trzymaj</span> - przez lata, ignorując wahania</li>
+                        <li><span class="highlight">Mniej stresu</span> - nie martwisz się dziennymi zmianami</li>
+                        <li><span class="highlight">Historycznie skuteczne</span> - dla Bitcoin i Ethereum</li>
+                        <li><span class="highlight">Ryzyko</span> - długoterminowe spadki niektórych projektów</li>
+                    </ul>
+                    <p>HODL to jedna z wielu strategii - nie jedyna słuszna!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact CTA -->
+        <div class="contact-cta">
+            <h3>🤝 Nie znalazłeś odpowiedzi?</h3>
+            <p>Nasz zespół wsparcia jest gotowy do pomocy! Skontaktuj się z nami przez formularz kontaktowy lub email.</p>
+            <a href="kontakt-new.html" class="btn">
+                📞 Skontaktuj się z nami
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="index_complete.html" class="footer-link">Home</a>
+            <a href="O_nas-new.html" class="footer-link">O nas</a>
+            <a href="FAQ-new.html" class="footer-link">FAQ</a>
+            <a href="kontakt-new.html" class="footer-link">Kontakt</a>
+            <a href="regulamin.html" class="footer-link">Regulamin</a>
+            <a href="polityka-prywatnosci-new.html" class="footer-link">Polityka Prywatności</a>
+        </div>
+        <div style="color: var(--text-secondary); margin-top: 1rem;">
+            © 2025 CryptoBLIK. Wszystkie prawa zastrzeżone.
+        </div>
+    </footer>
+
+    <script>
+        let currentCategory = 'all';
+
+        // Toggle FAQ answer
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Filter by category
+        function filterCategory(category) {
+            currentCategory = category;
+            
+            // Update active category card
+            document.querySelectorAll('.category-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            event.target.closest('.category-card').classList.add('active');
+            
+            // Filter FAQ items
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question h3').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                const matchesSearch = question.includes(searchTerm) || answer.includes(searchTerm);
+                const matchesCategory = currentCategory === 'all' || item.dataset.category === currentCategory;
+                
+                if (matchesSearch && matchesCategory && searchTerm.length > 0) {
+                    item.classList.remove('hidden');
+                    // Highlight search results
+                    if (searchTerm.length > 2) {
+                        item.style.borderColor = 'var(--primary-green)';
+                    }
+                } else if (searchTerm.length === 0) {
+                    // Reset to category filter when search is empty
+                    if (matchesCategory) {
+                        item.classList.remove('hidden');
+                        item.style.borderColor = '';
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                } else {
+                    item.classList.add('hidden');
+                    item.style.borderColor = '';
+                }
+            });
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('❓ FAQ page loaded successfully!');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Main pages
+Allow: /events-finder.html
+Allow: /index.html
+
+# Static assets
+Allow: /images/
+Allow: /css/
+Allow: /js/
+
+# Block admin/private areas (if any in future)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.log$
+Disallow: /api/keys/
+
+# Sitemap location
+Sitemap: https://eventfinder.fun/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
