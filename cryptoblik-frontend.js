@@ -3,6 +3,9 @@
  * Obsługa formularzy BLIK i integracja z backend API
  */
 
+// Test if script is loaded
+console.log('🔧 cryptoblik-frontend.js loaded successfully');
+
 class CryptoBLIKFrontend {
     constructor() {
         console.log('🚀 CryptoBLIKFrontend constructor called');
